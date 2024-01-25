@@ -2916,39 +2916,6 @@ behaviors {
         bindings = <&mo>, <&kp>;
         retro-tap; // tap on standalone hold
     };
-    //
-    // Thumb cluster hold-tap keys for Miryoku layers
-    //
-    thumb: thumb_layer_access {
-        compatible = "zmk,behavior-hold-tap";
-        flavor = THUMB_HOLDING_TYPE;
-        tapping-term-ms = <THUMB_HOLDING_TIME>;
-        #ifdef ENABLE_KEY_REPEAT
-        quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
-        #endif
-        #binding-cells = <2>;
-        bindings = <&mo>, <&kp>;
-    };
-    thumb_parang_left: thumb_layer_access_parang_left {
-        compatible = "zmk,behavior-hold-tap";
-        flavor = THUMB_HOLDING_TYPE;
-        tapping-term-ms = <THUMB_HOLDING_TIME>;
-        #ifdef ENABLE_KEY_REPEAT
-        quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
-        #endif
-        #binding-cells = <2>;
-        bindings = <&mo>, <&parang_left>;
-    };
-    space: thumb_layer_access_spacebar {
-        compatible = "zmk,behavior-hold-tap";
-        flavor = SPACE_HOLDING_TYPE;
-        tapping-term-ms = <SPACE_HOLDING_TIME>;
-        #ifdef ENABLE_KEY_REPEAT
-        quick-tap-ms = <SPACE_REPEAT_DECAY>; // enable repeat
-        #endif
-        #binding-cells = <2>;
-        bindings = <&mo>, <&kp>;
-    };
 
     //////////////////////////////////////////////////////////////////////////
     //
@@ -5688,7 +5655,7 @@ macros {
             &kp GRAVE        &kp SEMI  &LeftRing2 (COMMA)         &kp DOT                   &kp P                  &kp Y                                                                                                                                                    &kp F                             &kp G            &kp C  &RightRing2 (R)            &kp L              &kp BSLH
     &cappy CAPSLOCK 0  &LeftPinky (A)      &LeftRing1 (O)  &LeftMiddy (E)          &LeftIndex (U)  &plain LAYER_Typing I                                                                                                                                    &plain LAYER_Typing D                   &RightIndex (H)  &RightMiddy (T)  &RightRing1 (N)  &RightPinky (S)             &kp MINUS
             &kp LSHFT         &kp SQT               &kp Q           &kp J                   &kp K                  &kp X      &thumb LAYER_Function ESC                      &kp UP  &kp DOWN  &kp LEFT               &kp RIGHT  &thumb LAYER_System ENTER                  &kp B                             &kp M            &kp W            &kp V            &kp Z             &kp RSHFT
- &magic LAYER_Magic 0        &kp HOME           &kp PG_UP       &kp PG_DN  &thumb LAYER_Emoji END                         &thumb LAYER_Cursor BACKSPACE  &thumb LAYER_Number DELETE    &lower    &lower  &thumb LAYER_Mouse TAB  &space LAYER_Symbol SPACE                         &thumb_parang_left LAYER_World 0         &kp FSLH           &kp AT    &parang_right  &magic LAYER_Magic 0
+ &magic LAYER_Magic 0        &kp HOME           &kp PG_UP       &kp PG_DN  &thumb LAYER_Emoji END                         &thumb LAYER_Cursor BACKSPACE  &thumb LAYER_Number DELETE    &lower    &lower  &thumb LAYER_Mouse TAB  &space LAYER_Symbol SPACE                         &trans         &trans           &kp FSLH          &kp AT  &magic LAYER_Magic 0
             >;
         };
 
