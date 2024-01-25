@@ -2926,6 +2926,16 @@ behaviors {
         #binding-cells = <2>;
         bindings = <&mo>, <&kp>;
     };
+    space: thumb_layer_access_spacebar {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = SPACE_HOLDING_TYPE;
+        tapping-term-ms = <SPACE_HOLDING_TIME>;
+        #ifdef ENABLE_KEY_REPEAT
+        quick-tap-ms = <SPACE_REPEAT_DECAY>; // enable repeat
+        #endif
+        #binding-cells = <2>;
+        bindings = <&mo>, <&kp>;
+    };
     //////////////////////////////////////////////////////////////////////////
     //
     // Custom hold-taps
